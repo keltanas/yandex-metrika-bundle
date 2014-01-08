@@ -51,7 +51,7 @@ class AddTrackingListener
             'webvisor' => true, // Включает Вебвизор
         ];
 
-        $htmlCode = $this->templating->render('keltanasYaMetrikaBundle:Metrika:tracker.html.twig', [
+        $htmlCode = $this->templating->render('keltanasYandexMetrikaBundle:Metrika:tracker.html.twig', [
                 'ya_tracking' => $this->params['number'],
                 'config' => array_filter($config),
             ]);
