@@ -22,7 +22,6 @@ class AddTrackingListener
     /** @var TwigEngine */
     private $templating;
 
-
     public function __construct(TwigEngine $templating, array $params = [])
     {
         $this->templating = $templating;
@@ -54,6 +53,7 @@ class AddTrackingListener
         $htmlCode = $this->templating->render('keltanasYandexMetrikaBundle:Metrika:tracker.html.twig', [
                 'ya_tracking' => $this->params['number'],
                 'config' => array_filter($config),
+                'debug' => $this->debug,
             ]);
 
         $event->getResponse()->setContent(str_replace(

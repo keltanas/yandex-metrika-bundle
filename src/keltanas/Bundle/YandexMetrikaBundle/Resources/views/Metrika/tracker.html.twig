@@ -1,4 +1,4 @@
-{% if app.debug %}
+{% if debug %}
 <!-- {{ config|json_encode|raw }} -->
 {% else %}
 <!-- Yandex.Metrika counter -->
@@ -27,6 +27,9 @@
 
 <script>
 (function($, w, d){
+    if (undefined == $) {
+        return;
+    }
     $(w).on('load', function(){
         $(d).on('yandex.hit', function (e, params) {
             w.yaCounter{{ ya_tracking }} && params.url && w.yaCounter{{ ya_tracking }}.hit(params.url);
