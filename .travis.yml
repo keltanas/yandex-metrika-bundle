@@ -9,7 +9,7 @@ php:
 before_script:
   - mkdir app/cache app/logs
   - chmod 777 app/cache app/logs
-  - composer install --no-interaction --prefer-source
+  - composer install -n
   - sleep 3
 
 script:
